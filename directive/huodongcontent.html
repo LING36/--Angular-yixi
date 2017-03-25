@@ -1,0 +1,196 @@
+<div class="mainBody">
+	<section>
+		<div class="secondBnnerForDetail" style=" background-image: url(http://static.yixi.tv/background/2015-03-19/da80c388c268f3a72964f26de22600a1.1240x350.jpg);"></div>
+	</section>
+	<section class="sbw1240 pdt40 cutline">
+		<h2>活动</h2>
+	</section>
+	<section class="sbw1240 pdt40">
+		<div class="baseSectionTitleDetail tw400 mb40"><span>时间表</span></div>
+		<!--base time line-->
+		<table id="baseTimeLineList" class="baseTimeLineList mb60" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr class="grayBg">
+					<th>场次</th>
+					<th>日期</th>
+					<th>地点</th>
+					<th class="speaker">讲者</th>
+				</tr>
+				<tr ng-repeat="huodong in news">
+					<td>{{huodong.qi}}</td>
+					<td>{{huodong.data}}</td>
+					<td>{{huodong.site}}</td>
+					<td style="width: 55%;">
+						<span>{{huodong.name1}}
+                            <a href="http://yixi.tv/lecture/351">{{huodong.title1}}</a>
+                        </span>
+						<span>{{huodong.name2}}
+                            <a href="http://yixi.tv/lecture/353">{{huodong.title2}}</a>
+                        </span>
+						<span>{{huodong.name3}}
+                            <a href="http://yixi.tv/lecture/354">{{huodong.title3}}</a>
+                        </span>
+						<span>{{huodong.name4}}
+                            <a href="http://yixi.tv/lecture/355">{{huodong.title4}}</a>
+                        </span>
+						<span>{{huodong.name5}}
+                            <a href="http://yixi.tv/lecture/356">{{huodong.title5}}</a>
+                        </span>
+						<span>{{huodong.name6}}
+                            <a href="http://yixi.tv/lecture/359">{{huodong.title6}}</a>
+                        </span>
+						<span>{{huodong.name7}}
+	                        <a href="http://yixi.tv/lecture/360">{{huodong.title7}}</a>
+	                    </span>
+						<span>{{huodong.name8}}
+                            <a href="http://yixi.tv/lecture/369">{{huodong.title8}}</a>
+                        </span>
+						<span>{{huodong.name9}}
+                            <a href="http://yixi.tv/lecture/369">{{huodong.title9}}</a>
+                        </span>
+					</td>
+				</tr>
+
+				<tr>
+					<td>试验</td>
+					<td>2012-04-22</td>
+					<td>北京
+					</td>
+					<td>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</div>
+<style>
+	.clear {
+		zoom: 1;
+	}
+	
+	.clear:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	ul,
+	li {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+	}
+	
+	.mainBody {
+		position: relative;
+	}
+	
+	section {
+		display: block;
+		clear: both;
+	}
+	
+	* {
+		transition: all 150ms ease-in-out 0s;
+	}
+	
+	.secondBnnerForDetail {
+		width: 100%;
+		height: 350px;
+		max-width: 1240px;
+		margin: 0px auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.cutline {
+		border-bottom: 1px solid #AAA;
+	}
+	
+	.pdt40 {
+		padding: 40px 0px;
+	}
+	
+	.sbw1240 {
+		width: 90%;
+		max-width: 1240px;
+		margin: 0px auto;
+	}
+	
+	section {
+		display: block;
+		clear: both;
+	}
+	
+	h2 {
+		font-size: 2em;
+		line-height: 1em;
+		text-align: center;
+		display: block;
+		clear: both;
+		padding-bottom: 20px;
+	}
+	
+	.baseSectionTitleDetail {
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		letter-spacing: 0.2em;
+		border-top: 2px solid #CC3434;
+		border-bottom: 2px solid #CC3434;
+		color: #CC3434;
+		box-sizing: border-box;
+		font-size: 1.6em;
+		margin: 0px auto 10px;
+	}
+	
+	.baseTimeLineList {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0px auto;
+		padding-top: 40px;
+	}
+	
+	.grayBg {
+		background-color: #F8F8F8;
+	}
+	
+	.baseTimeLineList th {
+		line-height: 50px;
+		background-color: #F8F8F8;
+		border-bottom: 1px solid #DEDEDE;
+		text-indent: 5px;
+		font-size: 1em;
+		/*padding: 0px 5px;*/
+	}
+	tr:nth-child(odd){
+		background-color: #F8F8F8;
+	}
+	.baseTimeLineList tr td {
+		font-size: 0.8em;
+		line-height: 1.5em;
+		text-indent: 3px;
+		padding: 5px 0px;
+	}
+	
+	.baseTimeLineList span {
+		display: block;
+		line-height: 3em;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.baseTimeLineList span a {
+		text-decoration: none;
+		color: #E27D7D;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.baseTimeLineList span a:hover {
+		color: #CC3434;
+	}
+</style>

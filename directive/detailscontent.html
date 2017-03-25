@@ -1,0 +1,220 @@
+<div class="mainBody">
+	<section>
+		<div class="secondBnnerForDetail">
+			<img ng-src="{{new.img}}" style="width: 100%;height:100%;"/>
+		</div>
+	</section>
+	<section class="sbw1240 pdt40 cutline">
+		<h2>{{new.title}}</h2>
+		<span class="detailTitleTime">{{new.time}}</span></section>
+	<section class="sbw1240 pdt40">
+		<div class="topicOverView mt20 mb20 clearfix">{{new.shouduan}}</div>
+	</section>
+	<section class="pdt40 gray">
+		<div class="topicMainWord">
+			<p>{{new.content1}}</p>
+			<p>{{new.content2}}</p>
+			<p>{{new.content3}}</p>
+			<p>{{new.content4}}</p>
+		</div>
+	</section>
+	<section class="sbw1240 pdt40 clear">
+		<!--base video list-->
+		<ul class="baseVideoList clear">
+			<li>
+				<div class="baseVideoBox clear">
+					<div class="videoContent" style=" height: 162px;">
+						<img ng-src="{{new.ximg}}" />
+						<!--鼠标移入时显示  开始-->
+						<!--<div class="topicCover" >
+						<a href="">
+							<div class="videoHeadBox clear">
+								<div class="baseHeadContent videopos">
+									<img ng-src="{{new.littleimg}}">
+								</div>
+							</div>
+							<span class="name">{{new.name}}</span> 
+							<span class="speakersDescription">{{new.titled}}</span>
+						</a>
+					</div>
+					-->
+					</div>
+					<span class="videoTitle">{{new.xtitle}}</span>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<div>
+		<a href="#/index/zhuanti" class="fanhui">返回</a>
+	</div>
+</div>
+<style>
+	div {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.clear {
+		zoom: 1;
+	}
+	
+	.clear:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	.mainBody {
+		position: relative;
+	}
+	
+	section {
+		display: block;
+		clear: both;
+	}
+	
+	.secondBnnerForDetail {
+		width: 100%;
+		height: 300px;
+		max-width: 1240px;
+		margin: 0px auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.cutline {
+		border-bottom: 1px solid #AAA;
+	}
+	
+	.pdt40 {
+		padding: 40px 0px;
+	}
+	
+	.sbw1240 {
+		width: 90%;
+		max-width: 1240px;
+		margin: 0px auto;
+	}
+	
+	h2{
+		font-size: 1.8em;
+		line-height: 1em;
+		text-align: center;
+		display: block;
+		clear: both;
+		padding-bottom: 20px;
+	}
+	
+	.detailTitleTime,
+	.detailTitlePlace {
+		width: 100%;
+		line-height: 1.5em;
+		text-align: center;
+		padding-left: 0px;
+		display: inline-block;
+	}
+	
+	.topicOverView {
+		width: 100%;
+		max-width: 800px;
+		margin: 0px auto;
+		box-sizing: border-box;
+		border-left: 4px solid #CC3434;
+		padding-left: 1em;
+		font-size: 1.4em;
+		line-height: 1.8em;
+	}
+	
+	.gray {
+		background-color: #F2F2F2;
+	}
+	
+	.topicMainWord {
+		width: 90%;
+		/*max-width: 1000px;*/
+		margin: 0px auto;
+		font-size: 1.2em;
+		line-height: 1.8em;
+	}
+	
+	.topicMainWord p {
+		padding-bottom: 10px;
+		text-align: justify;
+		text-indent: 2em;
+	}
+	
+	.baseVideoList {
+		width: 100%;
+		float: left;
+		overflow: hidden;
+	}
+	
+	.baseVideoList li {
+		width: 100%;
+		max-width: 100%;
+		padding: 0px;
+		float: left;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+	}
+	
+	.baseVideoBox {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.baseVideoBox .videoContent {
+		height: 162px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	.baseVideoBox .videoContent img {
+		height: 162px;
+		width: 100%;
+		display: inline-block;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.baseVideoBox .videoTitle {
+		width: 100%;
+		display: block;
+		text-align: center;
+		color: #CC3434;
+		font-size: 1.4em;
+		line-height: 2.2em;
+	}
+	
+	.pdt60 {
+		padding: 40px 0px 0px;
+		width: 90%;
+		max-width: 1240px;
+		margin: 0px auto;
+	}
+	a.fanhui{
+		display: inline-block;
+		width: 200px;
+		height: 50px;
+		margin:0px 10px 10px 10px;
+		text-align: center;
+		line-height: 50px;
+		text-decoration: none;
+		background: #ccc;
+		color: #333;
+		border-radius: 5px;
+		font-size: 18px;
+	}
+</style>

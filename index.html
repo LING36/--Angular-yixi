@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html ng-app="yixiApp">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--轮播图框架样式-->
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<!--加上此句，变成移动端时比例能正确展示-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<!--angular库-->
+		<script type="text/javascript" src="js/angular.1.5.6.js"></script>
+		<!--ui路由-->
+		<script type="text/javascript" src="js/angular-ui-router.js"></script>
+		<!--轮播图js-->
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script>
+			var app = angular.module('yixiApp', ['ui.router', 'routerApp', 'controllers', 'directive', 'services']); //主模块
+			var router = angular.module('routerApp', []); //路由模块
+			var controller = angular.module('controllers', []); //控制器模块
+			var directive = angular.module('directive', []); //组件模块
+			var services = angular.module('services', []); //服务的模块
+			//路由----------------------------------------------------------------
+			router.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+					$stateProvider.state('index', { //头部
+						url: '/index',
+						templateUrl: 'template/index.html',
+						controller: 'indexCtrl'
+					}).state('index.one', { //首页
+						url: '/one',
+						templateUrl: 'template/one.html',
+						controller: 'oneCtrl'
+					}).state('index.zhuanti', { //专题
+						url: '/zhuanti',
+						templateUrl: 'template/zhuanti.html',
+						controller: 'zhuantiCtrl'
+					}).state('details', { //专题详情
+						url: '/details/:id',
+						controller: 'detailsCtrl',
+						templateUrl: 'template/details.html'
+					}).state('index.guanyu', { //关于
+						url: '/guanyu',
+						templateUrl: 'template/guanyu.html'
+					}).state('index.liwu', { //礼物
+						url: '/liwu',
+						templateUrl: 'template/liwu.html'
+					}).state('index.jilu', { //记录
+						url: '/jilu',
+						templateUrl: 'template/jilu.html',
+						controller: 'jiluCtrl'
+					}).state('index.huodong', { //活动
+						url: '/huodong',
+						templateUrl: 'template/huodong.html',
+						controller: 'huodongCtrl'
+					})
+					$urlRouterProvider.when('', '/index/one'); //默认进去的路由
+				}])
+				//组件--------------------------------------------------------------------------------------
+			directive.directive('header', [function() { //头部
+					return {
+						templateUrl: 'directive/header.html'
+					}
+				}]).directive('lunbotu', [function() { //轮播图
+					return {
+						templateUrl: 'directive/lunbotu.html',
+						link: function(even, ele, arrt) {
+							var swiper = new Swiper('.swiper-container', {
+								pagination: '.swiper-pagination',
+								paginationClickable: true
+							});
+						}
+					}
+				}]).directive('onecontent', [function() { //首页内容
+					return {
+						templateUrl: 'directive/onecontent.html'
+					}
+				}]).directive('footer', [function() { //底部
+					return {
+						templateUrl: 'directive/footer.html'
+					}
+				}]).directive('zhuanticontent', [function() { //专题集内容
+					return {
+						templateUrl: 'directive/zhuanticontent.html'
+					}
+				}]).directive('guanyucontent', [function() { //关于内容
+					return {
+						templateUrl: 'directive/guanyucontent.html'
+					}
+				}]).directive('liwucontent', [function() { //礼物内容
+					return {
+						templateUrl: 'directive/liwucontent.html'
+					}
+				}]).directive('jilucontent', [function() { //记录内容
+					return {
+						templateUrl: 'directive/jilucontent.html'
+					}
+				}]).directive('huodongcontent', [function() { //活动内容
+					return {
+						templateUrl: 'directive/huodongcontent.html'
+					}
+				}]).directive('detailscontent', [function() { //专题内容详情
+					return {
+						templateUrl: 'directive/detailscontent.html'
+					}
+				}])
+				//控制器---------------------------------------------------------------
+			controller.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
+				$scope.bool = true;
+				//底部
+				$scope.comments = [];
+				$scope.Comment = function() {
+					$http.get('json/footer.json', {
+						params: {}
+					}).success(function(data) {
+						//						console.log(data)
+						$scope.comments = $scope.comments.concat(data);
+						console.log($scope.comments)
+					})
+				}
+				$scope.Comment();
+			}]).controller('zhuantiCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) { //专题集的控制器
+				//内容
+				$scope.limit = 8, //一页多少条新闻
+					$scope.i = 0;
+				$scope.num = 0;
+				//默认列表数据为空
+				$scope.ztnews = [];
+				$scope.ztMore = function() {
+					$http.get('json/zhuanti.json', {
+						params: {
+							//							//每点击加载更多，就向接口请求下一页的数据
+							//							page: $scope.page,
+							//							limit: $scope.limit,
+							//							//要请求的频道id
+							//							channel_id: $state.params.id
+						}
+					}).success(function(data) {
+						console.log(data)
+							//						$scope.ztnews = $scope.ztnews.concat(data);
+						if ($scope.i < $scope.limit) {
+							$scope.num = $scope.i + $scope.limit;
+							for ($scope.i; $scope.i < $scope.num; $scope.i++) {
+								$scope.ztnews = $scope.ztnews.concat(data[$scope.i])
+							}
+						} else if ($scope.i >= $scope.limit) {
+							$scope.num = $scope.i + $scope.limit;
+							for ($scope.i; $scope.i < $scope.num; $scope.i++) {
+								$scope.ztnews = $scope.ztnews.concat(data[$scope.i])
+							}
+						} else if ($scope.i >= data.length) {
+							console.log("没有更多内容了！")
+						}
+					})
+				}
+				$scope.ztMore();
+			}]).controller('oneCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) { //首页的控制器
+				//轮播图
+				$scope.attrs = ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg', 'img/06.jpg'];
+				//内容
+				//默认列表数据为空
+				$scope.news = [];
+				$scope.loadMore = function() {
+					$http.get('json/one.json', {
+						params: {}
+					}).success(function(data) {
+						$scope.news = $scope.news.concat(data);
+					})
+				}
+				$scope.loadMore();
+			}]).controller('jiluCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) { //记录的控制器
+				//内容
+				//默认列表数据为空
+				$scope.news = [];
+				$scope.loadMore = function() {
+					$http.get('json/jilu.json', {
+						params: {}
+					}).success(function(data) {
+						$scope.news = $scope.news.concat(data);
+					})
+				}
+				$scope.loadMore();
+			}]).controller('huodongCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) { //活动的控制器
+				//内容
+				//默认列表数据为空
+				$scope.news = [];
+				$scope.loadMore = function() {
+					$http.get('json/huodong.json', {
+						params: {}
+					}).success(function(data) {
+						$scope.news = $scope.news.concat(data);
+						//						$scope.list = {};
+						//						for($scope.i=0;$scope.i<=data.lenght;$scope.i++){
+						//							$scope.list = data[$scope.i];
+						//						}
+					})
+				}
+				$scope.loadMore();
+			}]).controller('detailsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) { //活动的控制器
+				$http.get('json/detail.json', {
+						params: {
+							id: $state.params.id
+						}
+					}).success(function(data) {
+						console.log(data)
+							//也支持渲染html结构
+							//$scope.html = $sce.trustAsHtml(data.news_list[0].text)
+						$scope.new = data[$state.params.id]
+					})
+			}])
+		</script>
+	</head>
+
+	<body>
+		<div ui-view=""></div>
+	</body>
+
+</html>

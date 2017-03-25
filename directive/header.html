@@ -1,0 +1,158 @@
+<div class="topArea clear">
+	<!--logo-->
+	<a class="logoMb">
+	</a>
+	<a class="MNavButton" id="menuIcon" ng-click="bool=!bool">
+		<span ng-show="bool" class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+		<span ng-show="!bool" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	</a>
+</div>
+<div style="position: relative;border: 0px;">
+	<div ng-class="{'MbListBoxOut':bool,'MbListBox':!bool}" ng-click="bool=!bool">
+		<!--<!-ng-class="{'red':bool,'size':!bool}"--->
+		<!--<div class="MpopoutBG">
+		<div class="MloginPopout">
+			<div class="MPopoutLoginBox"><span>登录</span>
+				<form method="POST" action="http://yixi.tv" accept-charset="UTF-8" id="mLoginForm"><input name="_token" value="VjWaWUgvwfjsSGsRgd976YYNBa3BiYNjUKSJQFIo" type="hidden">
+					<input class="inputText" placeholder="请输入账号" name="email" type="text">
+					<input class="inputText" placeholder="请输入密码" name="password" type="password">
+					<input class="inputButton" value="登&nbsp;&nbsp;录" type="submit">
+					<div class="Fpassword"><a href="http://yixi.tv/findpassword" target="_blank">忘记密码了？</a></div>
+					<a href="#" class="chagePanel" id="MloginChage">注册新账号&nbsp;&gt;</a>
+				</form>
+			</div>
+			<div class="MPopoutsignBox"><span>注册</span>
+				<form method="POST" action="http://yixi.tv" accept-charset="UTF-8" id="mRegisterForm"><input name="_token" value="VjWaWUgvwfjsSGsRgd976YYNBa3BiYNjUKSJQFIo" type="hidden">
+					<input class="inputText" placeholder="请输入邮箱" name="email" type="email">
+					<input class="inputText" placeholder="请输入新密码" name="password" type="password">
+					<input class="inputText" placeholder="再次输入密码" name="repass" type="password">
+					<input class="inputButton" value="注&nbsp;&nbsp;册" type="submit">
+					<a href="#" class="chagePanel" id="MsignChage">&lt;&nbsp;已有账号</a>
+				</form>
+			</div>
+			<a href="#" class="MpopoutCloseButton">关闭</a>
+		</div>
+	</div>-->
+		<div class="searchBox">
+			<input placeholder="输入关键字..." class="searchInput searchBtn" type="search">
+		</div>
+		<ul class="mbNavList">
+			<li><a href="#/index/one">首页</a></li>
+			<li><a href="#/index/zhuanti">专题集</a></li>
+			<li><a href="#/index/huodong">活动</a></li>
+			<li><a href="#/index/jilu">纪录</a></li>
+			<li><a href="#/index/liwu">礼物</a></li>
+			<li><a href="#/index/guanyu">关于</a></li>
+		</ul>
+		<!--<div class="MloginBox"><a href="http://yixi.tv/usercenter" class="MloginButton">注册/登录</a>-->
+	</div>
+</div>
+<style>
+	/*清除浮动*/
+	div{margin: 0px;padding: 0px;}
+	.clear {
+		zoom: 1;
+	}
+	
+	.clear:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	.topArea {
+		height: 50px;
+		background: #444;
+		position: relative;
+	}
+	
+	.logoMb {
+		background-image: url(img/yixi-logo.png);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 90px;
+		height: 30px;
+		margin: 10px 0px;
+		display: inline-block;
+		float: left;
+		margin-left: 20px;
+	}
+	
+	.MNavButton {
+		display: block;
+		width: 30px;
+		height: 23px;
+		padding: 14px 10px;
+		position: absolute;
+		right: 20px;
+		cursor: pointer;
+	}
+	
+	.glyphicon {
+		color: #fff;
+		font-size: 20px;
+	}
+	/*----------------------------------------*/
+	
+	.MbListBoxOut {
+		z-index: -20;
+		position: absolute;
+		top: -1000px;
+		width: 100%;
+	}
+	
+	.MbListBox {
+		z-index: 20;
+		position: relative;
+		top: 0px;
+		background-color: #444;
+		/*transition: all 150ms ease-in-out 0s;*/
+		width: 100%;
+	}
+	/*搜索框--------------*/
+	
+	.MbListBox .searchBox {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+	
+	.searchBox .searchInput{
+		width: 90%;
+		border: 1px solid #333;
+		background-color: #444;
+		height: 40px;
+		color: #FFF;
+		font-size: 1.2em;
+		margin: 1em 5% 2em;
+		background-image: url("img/search.png");
+		background-position: 95% center;
+		background-repeat: no-repeat;
+	}
+	.MbListBox .mbNavList,
+	.MbListBox .searchBox {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+	
+	.mbNavList li {
+		line-height: 50px;
+		text-align: center;
+		box-sizing: border-box;
+		border-top: 1px solid #333;
+	}
+	
+	.mbNavList li a {
+		display: block;
+		color: #F2F2F2;
+		line-height: 50px;
+		font-size: 1.2em;
+		text-decoration: none;
+	}
+	
+	.mbNavList li:hover {
+		background-color: #CC3434;
+	}
+</style>

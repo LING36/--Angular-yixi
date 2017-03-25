@@ -1,0 +1,455 @@
+<div class="footer clear">
+	<div class="footerBox clear">
+		<div class="baseFootBox newCommom"><span class="title">最新评论</span>
+			<div class="footCutLine"></div>
+			<ul class="newCommonList">
+				<li class="clear" ng-repeat="list in comments">
+					<div class="headBox">
+						<div class="head"><img ng-src="{{list.img}}"></div>
+					</div>
+					<div class="wordBox">
+						<span class="name">{{list.name}}</span>
+						<span class="common"><a href="http://yixi.tv/lecture/164">{{list.content}}</a></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="baseFootBox contact"><span class="title">一席@关联</span>
+			<div class="footCutLine"></div>
+			<ul class="baseFootList">
+				<li><a href="http://www.youku.com/u/UNDg0NTA2OTY0/videos" target="_blank">一席@优酷</a></li>
+				<li><a href="http://weibo.com/yixiclub" target="_blank">一席@微博</a></li>
+				<li><a href="http://site.douban.com/173709/" target="_blank">一席@豆瓣</a></li>
+				<li><a href="https://www.facebook.com/pages/%E4%B8%80%E5%B8%AD/510008329046931" target="_blank">一席@Facebook</a></li>
+				<li class="footWeixin"><a href="">一席@微信</a>
+					<div>请在微信中搜索公众号<span>yixiclub</span>关注我们。<br>谢谢。</div>
+				</li>
+			</ul>
+		</div>
+		<div class="baseFootBox QA"><span class="title">支持</span>
+			<div class="footCutLine"></div>
+			<ul class="baseFootList">
+				<li><a href="http://yixi.tv/about">常见问题</a></li>
+				<li><a href="http://yixi.tv/activities">活动时间表</a></li>
+				<li><a href="http://yixi.tv/feedback" target="_blank">用户反馈</a></li>
+			</ul>
+		</div>
+		<div class="baseFootBox downloadApp"><span class="title">app</span>
+			<div class="footCutLine"></div>
+			<div class="coedDownloadBox">
+				
+				<div  class="comingCover"></div><!--style="bottom: -100%;"-->
+				
+				<div class="iosHead">for&nbsp;iOS</div>
+				<div class="bitMapBox">
+					<img src="img/bitmap_android.png">
+				</div>
+				<a href="https://itunes.apple.com/cn/app/yi-xi/id912814691?mt=8" class="itunesDownloadButton" target="_blank"></a>
+			</div>
+			<div class="coedDownloadBox ml10">
+				<div  class="comingCover"></div><!--style="bottom: -100%;"-->
+				<div class="androidHead">for&nbsp;Android</div>
+				<div class="bitMapBox"><img src="img/Bitmap_ios.png"></div>
+				<a href="#" class="androidDownloadButton"></a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="lastFoot">
+	<div class="lastFootBox clear">
+		<ul class="lastList clear">
+			<li class="weibo">
+				<a href="">
+					<img src="img/weibo.png"/>
+				</a>
+			</li>
+			<li class="youku">
+				<a href="">
+					<img src="img/youku.png" />
+				</a>
+			</li>
+			<li class="facebook">
+				<a href="">
+					<img src="img/facebook.png" />
+				</a>
+			</li>
+		</ul>
+		<span><a href="#">©</a>&nbsp;2014&nbsp;一席.&nbsp;京ICP备13001689号-1</span></div>
+</div>
+<style>
+	/*清除浮动*/
+	
+	a {
+		text-decoration: none;
+	}
+	
+	div {
+		margin: 0px;
+		padding: 0px;
+	}
+	ul{margin: 0px;padding: 0px;list-style: none;}
+	.clear {
+		zoom: 1;
+	}
+	
+	.clear:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	.footer {
+		width: 100%;
+		clear: both;
+		background-color: #666;
+	}
+	
+	.footerBox {
+		width: 90%;
+		max-width: 1240px;
+		margin: 0px auto;
+		padding: 20px 0px;
+	}
+	
+	.footerBox .newCommom {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		font-size: 12px;
+	}
+	
+	.newCommom .title {
+		background-image: url("img/common_foot.png");
+		background-position: left center;
+		background-repeat: no-repeat;
+		display: block;
+		line-height: 2em;
+		font-size: 1.4em;
+		color: #CCC;
+		padding-left: 30px;
+		box-sizing: border-box;
+	}
+	
+	.footCutLine {
+		width: 100%;
+		margin-top: 5px;
+		border-top: 1px solid #999;
+		height: 10px;
+		clear: both;
+	}
+	
+	.newCommonList {
+		width: 100%;
+	}
+	
+	.newCommonList li {
+		max-height: 80px;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	
+	.newCommonList li .headBox {
+		float: left;
+		max-width: 36px;
+		width: 9%;
+	}
+	
+	.newCommonList li .headBox .head {
+		width: 100%;
+		max-width: 36px;
+		border-radius: 50%;
+		border: 1px solid #FFF;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	
+	.newCommonList li .headBox .head img {
+		width: 100%;
+		float: left;
+	}
+	
+	.newCommonList li .wordBox {
+		float: left;
+		width: 91%;
+		padding-left: 10px;
+		box-sizing: border-box;
+	}
+	
+	.newCommonList li .wordBox .name {
+		display: block;
+		color: #CCC;
+		font-size: 1.3em;
+		line-height: 1.6em;
+	}
+	
+	.newCommonList li .wordBox .common {
+		display: block;
+		font-size: 1.3em;
+		line-height: 1.6em;
+		max-height: 64px;
+		overflow: hidden;
+	}
+	
+	.newCommonList li .wordBox .common a {
+		color: #CCC;
+		text-decoration: none;
+	}
+	/*一席关联*/
+	
+	.baseFootBox {
+		float: left;
+		box-sizing: border-box;
+		clear: right;
+	}
+	
+	.footerBox .contact,
+	.footerBox .QA {
+		width: 50%;
+		margin-bottom: 20px;
+	}
+	
+	.contact .title {
+		background-image: url("img/contect_foot.png");
+		background-position: left center;
+		background-repeat: no-repeat;
+		display: block;
+		line-height: 2em;
+		font-size: 1em;
+		color: #CCC;
+		padding-left: 30px;
+		box-sizing: border-box;
+	}
+	
+	.footWeixin div {
+		display: block;
+		font-size: 1.1em;
+		color: #AAA;
+		padding: 5px 0px 5px 2em;
+		border-top: 1px dashed #555;
+		border-bottom: 1px dashed #555;
+		text-indent: 0px;
+		line-height: 1.3em;
+	}
+	
+	.footWeixin div span {
+		color: #CCC;
+	}
+	
+	.footCutLine {
+		width: 100%;
+		margin-top: 5px;
+		border-top: 1px solid #999;
+		height: 10px;
+		clear: both;
+	}
+	
+	.baseFootList {
+		width: 100%;
+	}
+	
+	.baseFootList li {
+		text-indent: 2em;
+		line-height: 3em;
+	}
+	
+	.baseFootList li a {
+		color: #CCC;
+		font-size: 1em;
+		text-decoration: none;
+	}
+	
+	.footerBox .QA {
+		width: 50%;
+		margin-bottom: 20px;
+	}
+	
+	.QA .title {
+		background-image: url("img/support_foot.png");
+		background-position: left center;
+		background-repeat: no-repeat;
+		display: block;
+		line-height: 2em;
+		font-size: 1em;
+		color: #CCC;
+		padding-left: 30px;
+		box-sizing: border-box;
+	}
+	/*app*/
+	
+	.footerBox .downloadApp {
+		float: left;
+		width: 100%;
+		clear: both;
+		margin: 0px auto;
+	}
+	
+	.downloadApp .title {
+		background-image: url("img/app_foot.png");
+		background-position: left center;
+		background-repeat: no-repeat;
+		display: block;
+		line-height: 2em;
+		font-size: 1.4em;
+		color: #CCC;
+		padding-left: 30px;
+		box-sizing: border-box;
+	}
+	
+	.footCutLine {
+		width: 100%;
+		margin-top: 5px;
+		border-top: 1px solid #999;
+		height: 10px;
+		clear: both;
+	}
+	
+	.coedDownloadBox {
+		width: 50%;
+		max-width: 135px;
+		float: left;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.coedDownloadBox .iosHead {
+		background-image: url("img/itunes_dev.png");
+		background-repeat: no-repeat;
+		background-position: 123% bottom;
+		height: 24px;
+		line-height: 36px;
+		width: 100%;
+		color: #EDEDED;
+	}
+	
+	.bitMapBox {
+		text-align: center;
+		padding-top: 10px;
+	}
+	
+	.itunesDownloadButton {
+		background-image: url("img/itunes.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 135px;
+		height: 40px;
+		margin: 10px auto 0px;
+		display: inline-block;
+	}
+	
+	.coedDownloadBox {
+		width: 50%;
+		max-width: 135px;
+		float: left;
+		position: relative;
+		overflow: hidden;
+		margin-left: 10px;
+	}
+	
+	.coedDownloadBox .androidHead {
+		background-image: url("img/adnroid.png");
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		height: 24px;
+		line-height: 36px;
+		width: 100%;
+		color: #EDEDED;
+	}
+	
+	.bitMapBox {
+		text-align: center;
+		padding-top: 10px;
+	}
+	
+	.androidDownloadButton {
+		background-image: none;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 135px;
+		height: 40px;
+		margin: 10px auto 0px;
+		display: inline-block;
+	}
+	
+	.bitMapBox img {
+		width: 100%;
+		max-width: 135px;
+		float: left;
+	}
+	/*最底*、* */
+	
+	.lastFoot {
+		width: 100%;
+		background-color: #444;
+		margin-top: 0px;
+		height: 50px;
+		margin-bottom: 0px;
+	}
+	
+	.lastFootBox {
+		width: 90%;
+		max-width: 1240px;
+		margin: 0px auto;
+		color: #CCC;
+		line-height: 50px;
+		
+	}
+	
+	.lastList {
+		float: right;
+		height: 50px;
+		margin: 0px;
+		padding: 0px;
+		margin-right: 10px;
+		top:5px;
+	}
+	
+	.lastList li {
+		width: 24px;
+		margin: 0px 5px;
+		height: 40px;
+		float: left;
+		line-height: 40px;
+	}
+	
+	.lastList li a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 8px 10px;
+	}
+	.lastList li a img{
+		display: inline-block;
+		margin: 0px 10px;
+	}
+	.lastFootBox span{
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+	}
+	.lastFootBox span a{
+		text-decoration: none;
+		color: #ccc;
+	}
+	/*鼠标移入二维码*/
+	.comingCover {
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    bottom: -100%;
+    background-image: url("img/back_img.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-color: #222;
+    text-align: center;
+    line-height: 140px;
+    color: #CCC;
+    font-size: 1.2em;
+    /*top: 30px;*/
+   transition: all 150ms ease-in-out 0s;
+}
+.coedDownloadBox:hover .comingCover{
+	bottom: 0px;
+	top: 30px;
+}
+</style>
